@@ -1,0 +1,56 @@
+[
+  {
+    "id": "hyperfranchise",
+    "name": "Nike Zoom Hyperfranchise XD",
+    "description": "Adventures in Odyssey",
+    "image": "images/Nike_Zoom_Hyperfranchise_XD_01.jpg",
+    "large_image": "images/Nike_Zoom_Hyperfranchise_XD_01.jpg",
+    "price": 103.99,
+    "url": "http://www.amazon.com/Door-Religious-Knives/dp/B001FGW0UQ/?tag=quirkey-20"
+  },
+  {
+    "id": "madhandle",
+    "name": "adidas Mad Handle",
+    "description": "American Attorneys",
+    "image": "images/adidas_Mad_Handle_01.jpg",
+    "large_image": "images/adidas_Mad_Handle_01.jpg",
+    "price": 80.00,
+    "url": "http://www.amazon.com/gp/product/B002GNOMJE?ie=UTF8&tag=quirkeycom-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B002GNOMJE"
+  },
+  {
+    "id": "maxhamlow",
+    "name": "Nike Max H.A.M. Low",
+    "description": "British Civil Light Transport",
+    "image": "images/Nike_Max_HAM_Low_01.jpg",
+    "large_image": "images/Nike_Max_HAM_Low_01.jpg",
+    "price": 85.99,
+    "url": "http://www.amazon.com/Bitte-Orca-Dirty-Projectors/dp/B0026T4RTI/ref=pd_sim_m_12?tag=quirkey-20"
+  },
+  {
+    "id": "conversecoreox",
+    "name": "Converse Core Ox",
+    "description": "Grigory Szondy",
+    "image": "images/Converse_Core_Ox_01.jpg",
+    "large_image": "images/Converse_Core_Ox_01.jpg",
+    "price": 50.00,
+    "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
+  },
+  {
+    "id": "converseseasonal",
+    "name": "Converse Seasonal",
+    "description": "Stealth Monkey Virus",
+    "image": "images/Converse_Seasonal_01.jpg",
+    "large_image": "images/Converse_Seasonal_01.jpg",
+    "price": 50.00,
+    "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
+  },
+  {
+    "id": "paciano",
+    "name": "BRUNO MAGLI Paciano",
+    "description": "Sums of Mongolia",
+    "image": "images/BRUNO_MAGLI_Paciano_01.jpg",
+    "large_image": "images/BRUNO_MAGLI_Paciano_01.jpg",
+    "price": 465.00,
+    "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
+  }
+]

@@ -42,6 +42,7 @@ body {
 .pic-list li {
   width: 30%;
   display: inline-block;
+  cursor: pointer;
 }
 /* cart */
 .cart-info {

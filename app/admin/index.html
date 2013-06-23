@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Super Shoes Admin</title>
+        <link rel="stylesheet" href="../bower_components/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../styles/admin.css" />
+    </head>
+    <body>
+        <div id="contacts">
+            <header>
+                <div id="filter"><label>Show me:</label></div>
+                <a id="showForm" href="#">Add new contact</a>
+                <form id="addContact" action="#">
+                    <label for="photo">Photo:</label><input id="photo" type="file" />
+                    <label for="name">Name:</label><input id="name" />
+                    <label for="type">Type:</label><input id="type" />
+                    <label for="address">Address:</label><input id="address" />
+                    <label for="tel">Tel:</label><input id="tel" />
+                    <label for="email">Email:</label><input id="email" />
+                    <button id="add">Add</button>
+                </form>
+            </header>
+        </div>
+        <script id="contactTemplate" type="text/template">
+            <!-- <img src="../<%= article_images[0].image_path %>" alt="<%= name %>" /> -->
+            <h5><%= name %></h5>
+            <dl>
+                <dt>Price:</dt><dd>$<%= price %></dd>
+                <dt>Shelf:</dt><dd><%= total_in_shelf %></dd>
+                <dt>Vault:</dt><dd><%= total_in_vault %></dd>
+            </dl>
+            <button class="delete btn btn-danger">Delete</button>
+            <button class="edit btn btn-warning">Edit</button>
+        </script>
+        <script id="contactEditTemplate" type="text/template">
+            <form action="#">
+                <input type="file" value="<%= photo %>" />
+                <input class="id" value="<%= id %>" />
+                <input class="name" value="<%= name %>" />
+                <input class="description" value="<%= description %>" />
+                <input class="total_in_shelf" value="<%= total_in_shelf %>" />
+                <input class="total_in_vault" value="<%= total_in_vault %>" />
+                <input class="price" value="<%= price %>" />
+                <button class="save btn btn-success">Save</button>
+                <button class="cancel btn btn-warning">Cancel</button>
+            </form>
+        </script>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/json2/json2.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <script src="../bower_components/backbone/backbone.js"></script>
+        <script src="../scripts/admin.js"></script>
+    </body>
+</html>

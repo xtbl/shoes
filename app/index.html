@@ -20,7 +20,7 @@
             <li class="item"> 
               <div class="item-image">
                 <a href="#item/<%= p.id %>" class="thumbnail">
-                  <img alt="<%= p.name %>" src="<%= p.image %>" class="img-circle"/>
+                  <img alt="<%= p.name %>" src="<%= p.article_images[0].image_path %>" class="img-circle"/>
                 </a>
               </div>
               <h4 class="item-title"><%= p.name %></h4>
@@ -30,9 +30,18 @@
           </ul>
         </script>
         <script id="store_item_template" type="text/x-underscore-template">
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a> <span class="divider">/</span></li>
+            <li class="active"><%= name %></li>
+          </ul>
           <div class="item-detail">
             <div class="item-image">
-              <img alt="<%= name %>" src="<%= large_image %>" />
+              <img alt="<%= name %>" src="<%= article_images[0].image_path %>" />
+              <ul class="pic-list">
+                <% for (var i = article_images.length - 1; i >= 0; i--) { %>
+                  <li><img src="<%= article_images[i].image_path %>" class="detail-art-thumb"/></li>
+                <% } %>
+              </ul>
             </div>
           </div>
           <div class="item-info">
@@ -57,7 +66,7 @@
           </div>
         </script>
         <script id="store_cart_template" type="text/x-underscore-template">
-          <p>Items: <%= count %> ($<%= cost %>)</p>
+          <p>Articles: <%= count %> ($<%= cost %>)</p>
         </script>
 
     </head>
@@ -67,6 +76,7 @@
                 <h1>Super Shoes</h1>
 
                 <div class="cart-info">
+                  <img src="images/cart-green.png">
                 </div>
             </div>
 

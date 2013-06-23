@@ -21,7 +21,7 @@ body {
     letter-spacing: -1px;
 }
 
-/* custom */
+/* article list */
 .article-list li {
   width: 40%;
   float: left;
@@ -29,7 +29,30 @@ body {
   list-style: none;
 }
 
-
+/* article detail */
+.item-image {
+  width: 70%;
+  float: left;
+  text-align: center;
+}
+.pic-list {
+  width: 100%;
+  display: inline-block;
+}
+.pic-list li {
+  width: 30%;
+  display: inline-block;
+}
+/* cart */
+.cart-info {
+  width: 100px;
+  float: right;
+  background: url(../images/cart-green.png) no-repeat;
+  padding: 30px;
+}
+.cart-info p {
+  padding-top: 50px;
+}
 
 /******************************************************
  *  json store                 *

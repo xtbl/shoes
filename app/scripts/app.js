@@ -111,7 +111,7 @@
 
         render: function() {
             this.el.html(_.template(this.template, 
-                                    {'articles': this.collection.toJSON()}))
+                         {'articles': this.collection.toJSON()}))
             return this;
         }
     });
@@ -130,6 +130,13 @@
         events: {
             "keypress .uqf" : "updateOnEnter",
             "click .uq"     : "update",
+            "click .detail-art-thumb": "displayBigPic"
+        },
+
+        displayBigPic: function(e) {
+            // display bigger pic of clicked thumbnail
+            this.$('.item-image > img').fadeOut().
+                fadeIn('fast').attr("src", $(e.currentTarget).attr("src") );
         },
 
         update: function(e) {

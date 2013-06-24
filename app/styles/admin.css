@@ -16,7 +16,7 @@ header:after {
 	float:left;
 }
 
-#addContact {
+#addArticle {
 	display:none;
 	width:35%;
 	float:left;
@@ -25,24 +25,24 @@ header:after {
 	font-size:14px;
 }
 
-#addContact label {
+#addArticle label {
 	width:60px;
 	margin-right:10px;
 	text-align:right;
 	line-height:25px;
 }
 
-#addContact label,#addContact input {
+#addArticle label,#addArticle input {
 	display:block;
 	margin-bottom:10px;
 	float:left;
 }
 
-#addContact label[for="name"],#addContact label[for="address"],#addContact label[for="tel"] {
+#addArticle label[for="name"],#addArticle label[for="address"],#addArticle label[for="tel"] {
 	clear:both;
 }
 
-#addContact button {
+#addArticle button {
 	display:block;
 	float:right;
 	clear:both;

@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="../styles/admin.css" />
     </head>
     <body>
-        <div id="contacts">
+        <div id="articles">
             <header>
                 <a id="showForm" href="#" class="btn btn-info pull-left">New Shoe</a>
-                <form id="addContact" action="#" class="">
+                <form id="addArticle" action="#" class="">
                     <label for="photo">Image:</label><input id="photo" type="file" />
                     <label for="name">Name:</label><input type="text" id="name" />
                     <label for="descrip">Descrip:</label><input type="text" id="description" />
@@ -22,7 +22,7 @@
                 </form>
             </header>
         </div>
-        <script id="contactTemplate" type="text/template">
+        <script id="articleTemplate" type="text/template">
 
 
           <div class="thumbnail clearfix">
@@ -49,7 +49,7 @@
 
 
         </script>
-        <script id="contactEditTemplate" type="text/template">
+        <script id="articleEditTemplate" type="text/template">
             <form action="#">
                 <input type="file" value="<%= photo %>" />
                 <input type="text" class="id" value="<%= id %>" />

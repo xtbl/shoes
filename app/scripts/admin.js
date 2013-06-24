@@ -1,7 +1,7 @@
 ﻿(function ($) {
 
-    //temp data
-    var contacts = [
+    //temp data until json save works
+    var articles = [
   {
     "id": "hyperfranchise",
     "name": "Nike Zoom Hyper",
@@ -185,7 +185,7 @@
 ];
 
     //define product model
-    var Contact = Backbone.Model.extend({
+    var Article = Backbone.Model.extend({
         defaults: {
             id: "/img/placeholder.png",
             name: "Default Shoe",
@@ -212,15 +212,15 @@
 
     //define directory collection
     var Directory = Backbone.Collection.extend({
-        model: Contact
+        model: Article
     });
 
-    //define individual contact view
-    var ContactView = Backbone.View.extend({
+    //define individual Article view
+    var ArticleView = Backbone.View.extend({
         tagName: "article",
-        className: "contact-container span5 clearfix",
-        template: _.template($("#contactTemplate").html()),
-        editTemplate: _.template($("#contactEditTemplate").html()),
+        className: "article-container span5 clearfix",
+        template: _.template($("#articleTemplate").html()),
+        editTemplate: _.template($("#articleEditTemplate").html()),
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
@@ -228,14 +228,14 @@
         },
 
         events: {
-            "click button.delete": "deleteContact",
-            "click button.edit": "editContact",
+            "click button.delete": "deleteArticle",
+            "click button.edit": "editArticle",
             "click button.save": "saveEdits",
             "click button.cancel": "cancelEdit"
         },
 
-        //delete a contact
-        deleteContact: function () {
+        //delete an article
+        deleteArticle: function () {
             var removedType = this.model.get("type").toLowerCase();
 
             //remove model
@@ -250,8 +250,8 @@
             }
         },
 
-        //switch contact to edit mode
-        editContact: function () {
+        //switch Article to edit mode
+        editArticle: function () {
             this.$el.html(this.editTemplate(this.model.toJSON()));
 
             this.$el.find("input[type='hidden']").remove();
@@ -285,10 +285,10 @@
                 delete prev.photo;
             }
 
-            //update contacts array
-            _.each(contacts, function (contact) {
-                if (_.isEqual(contact, prev)) {
-                    contacts.splice(_.indexOf(contacts, contact), 1, formData);
+            //update articles array
+            _.each(articles, function (article) {
+                if (_.isEqual(article, prev)) {
+                    articles.splice(_.indexOf(articles, article), 1, formData);
                 }
             });
         },
@@ -300,10 +300,10 @@
 
     //define master view
     var DirectoryView = Backbone.View.extend({
-        el: $("#contacts"),
+        el: $("#articles"),
 
         initialize: function () {
-            this.collection = new Directory(contacts);
+            this.collection = new Directory(articles);
             
             //this.collection = new Directory({
             //    url: '../..storage/articles_admin.json'});
@@ -314,23 +314,23 @@
 
             this.on("change:filterType", this.filterByType, this);
             this.collection.on("reset", this.render, this);
-            this.collection.on("add", this.renderContact, this);
-            this.collection.on("remove", this.removeContact, this);
+            this.collection.on("add", this.renderArticle, this);
+            this.collection.on("remove", this.removeArticle, this);
         },
 
         render: function () {
             this.$el.find("article").remove();
 
             _.each(this.collection.models, function (item) {
-                this.renderContact(item);
+                this.renderArticle(item);
             }, this);
         },
 
-        renderContact: function (item) {
-            var contactView = new ContactView({
+        renderArticle: function (item) {
+            var articleView = new ArticleView({
                 model: item
             });
-            this.$el.append(contactView.render().el);
+            this.$el.append(articleView.render().el);
         },
 
         getTypes: function () {
@@ -358,7 +358,7 @@
         //add ui events
         events: {
             "change #filter select": "setFilter",
-            "click #add": "addContact",
+            "click #add": "addArticle",
             "click #showForm": "showForm"
         },
 
@@ -371,10 +371,10 @@
         //filter the view
         filterByType: function () {
             if (this.filterType === "all") {
-                this.collection.reset(contacts);
-                contactsRouter.navigate("filter/all");
+                this.collection.reset(articles);
+                articlesRouter.navigate("filter/all");
             } else {
-                this.collection.reset(contacts, { silent: true });
+                this.collection.reset(articles, { silent: true });
 
                 var filterType = this.filterType,
                     filtered = _.filter(this.collection.models, function (item) {
@@ -383,34 +383,34 @@
 
                 this.collection.reset(filtered);
 
-                contactsRouter.navigate("filter/" + filterType);
+                articlesRouter.navigate("filter/" + filterType);
             }
         },
 
-        //add a new contact
-        addContact: function (e) {
+        //add a new article
+        addArticle: function (e) {
             e.preventDefault();
 
             var formData = {};
-            $("#addContact").children("input").each(function (i, el) {
+            $("#addArticle").children("input").each(function (i, el) {
                 if ($(el).val() !== "") {
                     formData[el.id] = $(el).val();
                 }
             });
 
             //update data store
-            contacts.push(formData);
+            articles.push(formData);
 
             //re-render select if new type is unknown
             if (_.indexOf(this.getTypes(), formData.type) === -1) {
-                this.collection.add(new Contact(formData));
+                this.collection.add(new Article(formData));
                 this.$el.find("#filter").find("select").remove().end().append(this.createSelect());
             } else {
-                this.collection.add(new Contact(formData));
+                this.collection.add(new Article(formData));
             }
         },
 
-        removeContact: function (removedModel) {
+        removeArticle: function (removedModel) {
             var removed = removedModel.attributes;
 
             //if model acquired default photo property, remove it
@@ -418,21 +418,21 @@
                 delete removed.photo;
             }
 
-            //remove from contacts array
-            _.each(contacts, function (contact) {
-                if (_.isEqual(contact, removed)) {
-                    contacts.splice(_.indexOf(contacts, contact), 1);
+            //remove from articles array
+            _.each(articles, function (article) {
+                if (_.isEqual(article, removed)) {
+                    articles.splice(_.indexOf(articles, article), 1);
                 }
             });
         },
 
         showForm: function () {
-            this.$el.find("#addContact").slideToggle();
+            this.$el.find("#addArticle").slideToggle();
         }
     });
 
     //add routing
-    var ContactsRouter = Backbone.Router.extend({
+    var ArticlesRouter = Backbone.Router.extend({
         routes: {
             "filter/:type": "urlFilter"
         },
@@ -447,7 +447,7 @@
     var directory = new DirectoryView();
 
     //create router instance
-    var contactsRouter = new ContactsRouter();
+    var articlesRouter = new ArticlesRouter();
 
     //start history service
     Backbone.history.start();

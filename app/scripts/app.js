@@ -2,15 +2,20 @@
  * 
  * Super Shoes
  *  
- * Basic Shoe store. 
+ * Simple Shoe store.
  * Author: Cristobal Avila Dueñas
  * 2013
+ *
+ * Clients: localhost
+ * Admin:   localhost/admin
  * 
  * Components:
  * JavaScript, jQuery,
  * Underscore.js, Backbone.js, Bootstrap.
- * 
+ * Base project created using Yeoman, components imported with Bower
+ * and Grunt as server. 
  * References:
+ * http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/
  * https://github.com/elfsternberg/The-Backbone-Store/blob/master/backbonestore.nw
  * https://github.com/vincentmac/ContactManager
  * 
@@ -135,13 +140,23 @@
         events: {
             "keypress .uqf" : "updateOnEnter",
             "click .uq"     : "update",
-            "click .detail-art-thumb": "displayBigPic"
+            "click .detail-art-thumb": "displayBigPic",
+            "mouseover #img-zoom" : "zoomImage"
         },
 
         displayBigPic: function(e) {
             // display bigger pic of clicked thumbnail
             this.$('.item-image > img').fadeOut().
                 fadeIn('fast').attr("src", $(e.currentTarget).attr("src") );
+            //$("#img-zoom").elevateZoom({zoomLevel : 0.5,zoomWindowWidth:200,
+              //  zoomWindowHeight:300});
+            $("#img-zoom").elevateZoom({zoomLevel : 0.5,zoomWindowWidth:200,
+                zoomWindowHeight:300});
+        },
+
+        zoomImage: function(e) {
+            $(e.currentTarget).elevateZoom({zoomLevel : 0.5,zoomWindowWidth:200,
+                zoomWindowHeight:300});
         },
 
         update: function(e) {
@@ -217,6 +232,7 @@
             var view = this.views['_index'];
             $.when(this.hideAllViews()).then(
                 function() { return view.show(); });
+            $('div.zoomContainer').remove();
         },
 
         article: function(id) {

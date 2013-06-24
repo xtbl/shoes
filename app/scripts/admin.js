@@ -1,10 +1,10 @@
 ﻿(function ($) {
 
-    //demo data
+    //temp data
     var contacts = [
   {
     "id": "hyperfranchise",
-    "name": "Nike Zoom Hyperfranchise XD",
+    "name": "Nike Zoom Hyper",
     "description": "OMG this shoe is amazing!",
     "image": "images/Nike_Zoom_Hyperfranchise_XD_01.jpg",
     "article_images": [
@@ -218,7 +218,7 @@
     //define individual contact view
     var ContactView = Backbone.View.extend({
         tagName: "article",
-        className: "contact-container",
+        className: "contact-container span5 clearfix",
         template: _.template($("#contactTemplate").html()),
         editTemplate: _.template($("#contactEditTemplate").html()),
 
@@ -253,20 +253,9 @@
         //switch contact to edit mode
         editContact: function () {
             this.$el.html(this.editTemplate(this.model.toJSON()));
-            
+
             this.$el.find("input[type='hidden']").remove();
         },
-
-        /*addType: function () {
-            if (this.select.val() === "addType") {
-
-                this.select.remove();
-
-                $("<input />", {
-                    "class": "type"
-                }).insertAfter(this.$el.find(".name")).focus();
-            }
-        },*/
 
         saveEdits: function (e) {
             e.preventDefault();

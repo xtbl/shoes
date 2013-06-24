@@ -10,21 +10,34 @@
     <body>
         <div id="contacts">
             <header>
-                <div id="filter"><label>Show me:</label></div>
-                <a id="showForm" href="#">Add new contact</a>
-                <form id="addContact" action="#">
-                    <label for="photo">Photo:</label><input id="photo" type="file" />
-                    <label for="name">Name:</label><input id="name" />
-                    <label for="type">Type:</label><input id="type" />
-                    <label for="address">Address:</label><input id="address" />
-                    <label for="tel">Tel:</label><input id="tel" />
-                    <label for="email">Email:</label><input id="email" />
-                    <button id="add">Add</button>
+                <a id="showForm" href="#" class="btn btn-info pull-left">New Shoe</a>
+                <form id="addContact" action="#" class="">
+                    <label for="photo">Image:</label><input id="photo" type="file" />
+                    <label for="name">Name:</label><input type="text" id="name" />
+                    <label for="descrip">Descrip:</label><input type="text" id="description" />
+                    <label for="address">Address:</label><input type="text" id="address" />
+                    <label for="tel">Shelf:</label><input type="text" id="total_in_shelf" />
+                    <label for="email">Vault:</label><input type="text" id="total_in_vault" />
+                    <button id="add" class="btn btn-success">Add</button>
                 </form>
             </header>
         </div>
         <script id="contactTemplate" type="text/template">
-            <!-- <img src="../<%= article_images[0].image_path %>" alt="<%= name %>" /> -->
+
+
+          <div class="thumbnail clearfix">
+            <img src="../<%= article_images[0].image_path %>" alt="<%= name %>" alt="ALT NAME" class="pull-left span2 clearfix" style='margin-right:10px'>
+            <div class="caption" class="pull-left">
+              <h5><%= name %></h5>
+              <small><b>Price: </b>$<%= price %></small>
+              <small><b>Shelf: </b>$<%= total_in_shelf %></small>
+              <small><b>Vault: </b>$<%= total_in_vault %></small>
+              <button class="edit btn btn-warning">Edit</button>
+              <button class="delete btn btn-danger">Delete</button>              
+            </div>
+          </div>
+
+            <!-- <img src="../<%= article_images[0].image_path %>" alt="<%= name %>" /> 
             <h5><%= name %></h5>
             <dl>
                 <dt>Price:</dt><dd>$<%= price %></dd>
@@ -32,21 +45,24 @@
                 <dt>Vault:</dt><dd><%= total_in_vault %></dd>
             </dl>
             <button class="delete btn btn-danger">Delete</button>
-            <button class="edit btn btn-warning">Edit</button>
+            <button class="edit btn btn-warning">Edit</button>-->
+
+
         </script>
         <script id="contactEditTemplate" type="text/template">
             <form action="#">
                 <input type="file" value="<%= photo %>" />
-                <input class="id" value="<%= id %>" />
-                <input class="name" value="<%= name %>" />
-                <input class="description" value="<%= description %>" />
-                <input class="total_in_shelf" value="<%= total_in_shelf %>" />
-                <input class="total_in_vault" value="<%= total_in_vault %>" />
-                <input class="price" value="<%= price %>" />
+                <input type="text" class="id" value="<%= id %>" />
+                <input type="text" class="name" value="<%= name %>" />
+                <input ctype="text" lass="description" value="<%= description %>" />
+                <input type="text" class="total_in_shelf" value="<%= total_in_shelf %>" />
+                <input type="text" class="total_in_vault" value="<%= total_in_vault %>" />
+                <input type="text" class="price" value="<%= price %>" />
                 <button class="save btn btn-success">Save</button>
                 <button class="cancel btn btn-warning">Cancel</button>
             </form>
         </script>
+
         <script src="../bower_components/jquery/jquery.js"></script>
         <script src="../bower_components/json2/json2.js"></script>
         <script src="../bower_components/underscore/underscore.js"></script>

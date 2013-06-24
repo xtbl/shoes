@@ -1,8 +1,8 @@
 [
   {
     "id": "hyperfranchise",
-    "name": "Nike Zoom Hyperfranchise XD",
-    "description": "Adventures in Odyssey",
+    "name": "Nike Zoom Cool shoeHyper XD",
+    "description": "Cool shoe",
     "image": "images/Nike_Zoom_Hyperfranchise_XD_01.jpg",
     "article_images": [
       {
@@ -18,6 +18,13 @@
         "image_path": "images/Nike_Zoom_Hyperfranchise_XD_03.jpg"
       }
     ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
+    ],
     "large_image": "images/Nike_Zoom_Hyperfranchise_XD_01.jpg",
     "price": 103.99,
     "url": "http://www.amazon.com/Door-Religious-Knives/dp/B001FGW0UQ/?tag=quirkey-20"
@@ -25,7 +32,7 @@
   {
     "id": "maxhamlow",
     "name": "Nike Max H.A.M. Low",
-    "description": "British Civil Light Transport",
+    "description": "Cool shoe",
     "image": "images/Nike_Max_HAM_Low_01.jpg",
     "article_images": [
       {
@@ -41,6 +48,13 @@
         "image_path": "images/Nike_Max_HAM_Low_03.jpg"
       }
     ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
+    ],
     "large_image": "images/Nike_Max_HAM_Low_01.jpg",
     "price": 85.99,
     "url": "http://www.amazon.com/Bitte-Orca-Dirty-Projectors/dp/B0026T4RTI/ref=pd_sim_m_12?tag=quirkey-20"
@@ -48,7 +62,7 @@
   {
     "id": "conversecoreox",
     "name": "Converse Core Ox",
-    "description": "Grigory Szondy",
+    "description": "Cool shoe",
     "image": "images/Converse_Core_Ox_01.jpg",
     "article_images": [
       {
@@ -64,6 +78,13 @@
         "image_path": "images/Converse_Core_Ox_03.jpg"
       }
     ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
+    ],
     "large_image": "images/Converse_Core_Ox_01.jpg",
     "price": 50.00,
     "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
@@ -71,7 +92,7 @@
   {
     "id": "converseseasonal",
     "name": "Converse Seasonal",
-    "description": "Stealth Monkey Virus",
+    "description": "Cool shoe",
     "image": "images/Converse_Seasonal_01.jpg",
     "article_images": [
       {
@@ -87,14 +108,21 @@
         "image_path": "images/Converse_Seasonal_03.jpg"
       }
     ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
+    ],
     "large_image": "images/Converse_Seasonal_01.jpg",
     "price": 50.00,
     "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
   },
   {
     "id": "paciano",
-    "name": "BRUNO MAGLI Paciano",
-    "description": "Sums of Mongolia",
+    "name": "MAGLI Paciano",
+    "description": "Cool shoe",
     "image": "images/BRUNO_MAGLI_Paciano_01.jpg",
     "article_images": [
       {
@@ -110,6 +138,13 @@
         "image_path": "images/BRUNO_MAGLI_Paciano_03.jpg"
       }
     ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
+    ],
     "large_image": "images/BRUNO_MAGLI_Paciano_01.jpg",
     "price": 465.00,
     "url": "http://www.amazon.com/Pains-Being-Pure-Heart/dp/B001LGXIDS/ref=pd_sim_m_44?tag=quirkey-20"
@@ -117,7 +152,7 @@
   {
     "id": "madhandle",
     "name": "adidas Mad Handle",
-    "description": "American Attorneys",
+    "description": "Cool shoe",
     "image": "images/adidas_Mad_Handle_01.jpg",
     "article_images": [
       {
@@ -132,6 +167,13 @@
         "id": "3",
         "image_path": "images/adidas_Mad_Handle_03.jpg"
       }
+    ],
+    "stores": [
+      {
+        "id": "1",
+        "name": "Cachos",
+        "address": "SJO"
+      }   
     ],
     "large_image": "images/adidas_Mad_Handle_01.jpg",
     "price": 80.00,

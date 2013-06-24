@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="styles/main.css">
 
         <script id="store_index_template" type="text/x-underscore-tmplate">
-          <h1>Shoes</h1>
           <ul class="article-list">
             <% for(i=0,l=articles.length;i<l;++i) { p = articles[i]; %>
             <li class="item"> 
@@ -23,8 +22,10 @@
                   <img alt="<%= p.name %>" src="<%= p.article_images[0].image_path %>" class="img-circle"/>
                 </a>
               </div>
-              <h4 class="item-title"><%= p.name %></h4>
-              <div class="item-price">$<%= p.price %></div>
+              <div class="item-index-info">
+                <h4 class="item-title"><%= p.name %></h4>
+                <h4 class="item-price">$<%= p.price %></h4>
+              </div>
             </li>
             <% } %>
           </ul>
@@ -45,9 +46,11 @@
             </div>
           </div>
           <div class="item-info">
-            <div class="item-artist"><%= description %></div>
-            <div class="item-title"><%= name %></div>
+            <div class="item-title"><strong><%= name %></strong></div>
             <div class="item-price">$<%= price %></div>
+            <div class="item-description"><small><%= description %></small></div>
+            <div class="item-store"><small>Store: <%= stores[0].name %></small></div>
+            <div class="item-store"><small>Location: <%= stores[0].address %></small></div>
             <form action="#/cart" method="post">
               <p>
                 <label>Quantity:</label>
@@ -57,27 +60,23 @@
                 <input class="uq btn btn-large btn-primary" type="submit" value="Add to Cart" />
               </p>
             </form>
-            <div class="item-link">
-              <a href="<%= url %>">Buy this item on Amazon</a>
-            </div>
-            <div class="back-link">
-              <a href="#">&laquo; Back to Items</a>
-            </div>
           </div>
         </script>
         <script id="store_cart_template" type="text/x-underscore-template">
-          <p>Articles: <%= count %> ($<%= cost %>)</p>
+          <div class="cart-bg"></div>
+          <div><h5>Shoes: <%= count %> $<%= cost %></h5><div>
         </script>
 
     </head>
     <body>
         <div id="container">
-            <div id="header">
+            <div id="header" class="page-header">
+              <div>
                 <h1>Super Shoes</h1>
 
                 <div class="cart-info">
-                  <img src="images/cart-green.png">
                 </div>
+               </div> 
             </div>
 
             <div id="main"> </div>

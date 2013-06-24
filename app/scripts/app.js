@@ -1,16 +1,21 @@
 /**
+ * 
  * Super Shoes
  *  
- * Shoe store. JavaScript, Backbone.js, Bootstrap.
+ * Basic Shoe store. 
  * Author: Cristobal Avila Dueñas
  * 2013
  * 
+ * Components:
+ * JavaScript, jQuery,
+ * Underscore.js, Backbone.js, Bootstrap.
+ * 
  * References:
- * add all references here.
- * backbone store
- * etc etc etc
+ * https://github.com/elfsternberg/The-Backbone-Store/blob/master/backbonestore.nw
+ * https://github.com/vincentmac/ContactManager
  * 
  */
+
 (function() {
 
     var Article = Backbone.Model.extend({})
@@ -170,8 +175,8 @@
                 _.template(this.template, {
                     'count': this.collection.getTotalCount(),
                     'cost': this.collection.getTotalCost()
-                })).animate({paddingTop: '30px'})
-                .animate({paddingTop: '10px'});
+                })).animate({opacity: 0})
+                .animate({opacity: 1});
         }
     });
 

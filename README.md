@@ -11,5 +11,7 @@ Single Page Application. Shoe Store with shopping cart, zoom and admin panel. Ge
 
 
 ![Screenshot](/app/images/screenshots/screenshot_01.png "shoes")
+======
 ![Screenshot](/app/images/screenshots/screenshot_02.png "shoes")
+======
 ![Screenshot](/app/images/screenshots/screenshot_03.png "shoes")

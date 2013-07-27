@@ -10,6 +10,6 @@ Single Page Application. Shoe Store with shopping cart, zoom and admin panel. Ge
 #### Backbone.js, HTML5, CSS3, JavaScript, JSON.
 
 
-![Screenshot](/images/screenshots/screenshot_01.png "shoes")
-![Screenshot](/images/screenshots/screenshot_02.png "shoes")
-![Screenshot](/images/screenshots/screenshot_03.png "shoes")
+![Screenshot](/app/images/screenshots/screenshot_01.png "shoes")
+![Screenshot](/app/images/screenshots/screenshot_02.png "shoes")
+![Screenshot](/app/images/screenshots/screenshot_03.png "shoes")
